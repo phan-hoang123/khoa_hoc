@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tư Vấn Lộ Trình - EduVantage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --secondary: #0f172a;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --white: #ffffff;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background-color: var(--bg-light); min-height: 100vh; padding-bottom: 80px; }
+        h1, h2, h3, .logo { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- Header Tối Giản --- */
+        header { background: var(--white); border-bottom: 1px solid var(--border); padding: 18px 0; position: sticky; top: 0; z-trangchu: 1000; }
+        nav { display: flex; justify-content: center; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: var(--secondary); letter-spacing: -0.5px; }
+        .logo span { color: var(--primary); }
+
+        /* --- Nút Home --- */
+        .fixed-home-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+            z-trangchu: 2000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .fixed-home-btn:hover { background: var(--primary); transform: scale(1.1); }
+
+        /* --- Page Header --- */
+        .page-title-section { padding: 60px 0 40px; text-align: center; }
+        .page-title-section h1 { font-size: 36px; color: var(--secondary); margin-bottom: 15px; }
+        .page-title-section p { color: var(--text-gray); font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* --- Timeline (Lộ trình) --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 80px;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15px;
+            height: 100%;
+            width: 4px;
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 34px;
+            height: 34px;
+            background: var(--secondary);
+            border: 4px solid var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: bold;
+            z-trangchu: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot { background: var(--primary); }
+
+        .timeline-content {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+
+        .timeline-content h3 { font-size: 20px; color: var(--secondary); margin-bottom: 10px; }
+        .timeline-content p { color: var(--text-gray); font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+
+        /* Tech Stack Tags */
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tech-tag {
+            background: #f1f5f9;
+            color: var(--secondary);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* --- Tư vấn Form --- */
+        .consult-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            border: 1px solid var(--border);
+            text-align: center;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .consult-box h2 { font-size: 24px; margin-bottom: 15px; }
+        .consult-box p { color: var(--text-gray); font-size: 14px; margin-bottom: 30px; }
+
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--secondary); }
+        .form-control { width: 100%; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--border); font-size: 15px; font-family: 'Inter'; outline: none; transition: var(--transition); }
+        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1); }
+        
+        .btn-submit {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-submit:hover { background: var(--primary); }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-gray); font-size: 13px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="trangchu.html" class="logo">EDU<span>VANTAGE</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <a href="trangchu.html" class="fixed-home-btn" title="Về trang chủ">
+        <i class="fa-solid fa-house"></i>
+    </a>
+
+    <div class="container">
+        <div class="page-title-section">
+            <h1>Lộ Trình Trở Thành Kỹ Sư Phần Mềm</h1>
+            <p>Từ số 0 đến lập trình viên chuyên nghiệp. Lộ trình được thiết kế bài bản, tối ưu hóa thực chiến dành riêng cho sinh viên khối kỹ thuật.</p>
+        </div>
+
+        <div class="timeline">
+            <!-- Bước 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-content">
+                    <h3>Nền Tảng Lập Trình & Tư Duy Logic</h3>
+                    <p>Bắt đầu với ngôn ngữ nền tảng mạnh mẽ nhất để rèn luyện tư duy thuật toán, cấu trúc dữ liệu và lập trình hướng đối tượng (OOP). Xây dựng các ứng dụng quản lý cơ bản.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fa-solid fa-code"></i> C++</span>
+                        <span class="tech-tag"><i class="fa-brands fa-microsoft"></i> C# WinForms</span>
+                        <span class="tech-tag"><i class="fa-solid fa-sitemap"></i> OOP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bước 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-content">
+                    <h3>Khai Phá Sức Mạnh Web Fullstack</h3>
+                    <p>Chuyển mình sang môi trường Web. Làm chủ từ giao diện người dùng động (Frontend) đến hệ thống máy chủ và cơ sở dữ liệu (Backend). Xây dựng website thương mại điện tử.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fa-brands fa-react" style="color: #61dafb;"></i> ReactJS</span>
+                        <span class="tech-tag"><i class="fa-brands fa-node-js" style="color: #68a063;"></i> Node.js</span>
+                        <span class="tech-tag"><i class="fa-brands fa-php" style="color: #777bb4;"></i> PHP</span>
+                        <span class="tech-tag"><i class="fa-solid fa-database" style="color: #00758f;"></i> MySQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bước 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-content">
+                    <h3>Đồ Họa & Mô Phỏng Không Gian 3D</h3>
+                    <p>Nâng cấp kỹ năng với lập trình đồ họa máy tính. Viết code dựng hình 3D, xử lý camera, ánh sáng và mô phỏng vật lý trong không gian ảo.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fa-solid fa-cubes"></i> OpenGL</span>
+                        <span class="tech-tag"><i class="fa-solid fa-cube"></i> GLUT</span>
+                        <span class="tech-tag"><i class="fa-solid fa-laptop-code"></i> Visual Studio</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bước 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-content">
+                    <h3>Thực Chiến Dự Án & Tốt Nghiệp</h3>
+                    <p>Tích hợp các công nghệ Cloud để hoàn thiện sản phẩm. Làm việc với Firebase để xử lý Real-time Database (như ứng dụng chat, thư chúc mừng) và chuẩn bị hành trang ứng tuyển.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag"><i class="fa-solid fa-fire" style="color: #FFCA28;"></i> Firebase</span>
+                        <span class="tech-tag"><i class="fa-solid fa-briefcase"></i> Portfolio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="consult-box">
+            <h2>Chưa biết bắt đầu từ đâu?</h2>
+            <p>Để lại thông tin, chuyên gia của chúng tôi sẽ thiết kế lộ trình cá nhân hóa hoàn toàn miễn phí cho bạn.</p>
+            
+            <form action="#" method="POST" onsubmit="alert('Đăng ký thành công! Chúng tôi sẽ liên hệ sớm nhất.'); return false;">
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại / Zalo</label>
+                    <input type="tel" class="form-control" placeholder="09xx xxx xxx" required>
+                </div>
+                <div class="form-group">
+                    <label>Mục tiêu học tập</label>
+                    <select class="form-control">
+                        <option>Web Fullstack (React, Node.js...)</option>
+                        <option>Đồ họa 3D (C++, OpenGL)</option>
+                        <option>Phần mềm Desktop (C#)</option>
+                        <option>Chưa rõ, cần tư vấn thêm</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">NHẬN TƯ VẤN LỘ TRÌNH</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2026 EduVantage Academy. Designed by Phan Duy Hoàng.
+        </div>
+    </footer>
+
+</body>
+</html>
