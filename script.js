@@ -1,16 +1,22 @@
 const coursesData = [
     {
-        id: 1, tag: '-30%', icon: 'fa-regular fa-face-smile', title: 'Giao Tiếp Cơ Bản: Từ Ngại Nói Đến Tự Tin',
+        id: 1, 
+        category: 'Công sở', /* <--- Thêm dòng này */
+        tag: '-30%', icon: 'fa-regular fa-face-smile', title: 'Giao Tiếp Cơ Bản: Từ Ngại Nói Đến Tự Tin',
         desc: 'Phá vỡ rào cản tâm lý, bắt chuyện tự nhiên. Dành cho người hướng nội muốn làm chủ cuộc trò chuyện.',
         price: '2.450.000₫', oldPrice: '3.500.000₫', hours: 24, students: 1240
     },
     {
-        id: 2, tag: 'HOT', icon: 'fa-solid fa-person-chalkboard', title: 'Nghệ Thuật Thuyết Trình Đỉnh Cao',
+        id: 2, 
+        category: 'Thuyết trình', /* <--- Thêm dòng này */
+        tag: 'HOT', icon: 'fa-solid fa-person-chalkboard', title: 'Nghệ Thuật Thuyết Trình Đỉnh Cao',
         desc: 'Làm chủ sân khấu, cấu trúc bài thuyết trình thu hút và sử dụng ngôn ngữ cơ thể để truyền cảm hứng.',
         price: '3.200.000₫', oldPrice: '4.500.000₫', hours: 32, students: 850
     },
     {
-        id: 3, tag: 'NEW', icon: 'fa-solid fa-briefcase', title: 'Giao Tiếp Công Sở & Phỏng Vấn',
+        id: 3, 
+        category: 'Công sở', /* <--- Thêm dòng này */
+        tag: 'NEW', icon: 'fa-solid fa-briefcase', title: 'Giao Tiếp Công Sở & Phỏng Vấn',
         desc: 'Kỹ năng ứng xử thông minh nơi công sở, đàm phán thuyết phục và chinh phục nhà tuyển dụng.',
         price: '1.950.000₫', oldPrice: '2.500.000₫', hours: 18, students: 520
     }
@@ -40,6 +46,56 @@ const app = {
         container.innerHTML = '';
         
         coursesData.forEach(course => {
+            container.innerHTML += `
+                <div class="course-card" onclick="window.location.href='detail.html?id=${course.id}'">
+                    <div class="course-img">
+                        <div class="course-tag">${course.tag}</div>
+                        <i class="${course.icon}"></i>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-meta">
+                            <span style="color: #fbbf24;"><i class="fa-solid fa-star"></i> 4.9</span>
+                            <span><i class="fa-solid fa-clock"></i> ${course.hours} Giờ</span>
+                        </div>
+                        <h3>${course.title}</h3>
+                        <p>${course.desc}</p>
+                        <div class="course-footer">
+                            <div>
+                                <span style="text-decoration: line-through; color: #94a3b8; font-size: 13px; display:block;">${course.oldPrice}</span>
+                                <span class="price">${course.price}</span>
+                            </div>
+                            <span style="color: var(--primary); font-weight: 700;">Chi tiết &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    },
+
+    // === HÀM MỚI: Lọc khóa học khi bấm nút ===
+    filterCourses: function(category, btnElement) {
+        // 1. Xóa màu xanh (active) ở tất cả các nút
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        // 2. Thêm màu xanh vào cái nút ông vừa bấm
+        btnElement.classList.add('active');
+        // 3. Gọi hàm vẽ lại danh sách theo đúng danh mục
+        this.renderCourses(category);
+    },
+
+    // === HÀM CŨ ĐƯỢC CẬP NHẬT: Vẽ danh sách khóa học ===
+    renderCourses: function(category = 'Tất cả') {
+        const container = document.getElementById('courseList');
+        if (!container) return; // Nếu không ở trang Khóa học thì bỏ qua
+
+        container.innerHTML = '';
+        
+        // Lọc dữ liệu: Nếu là "Tất cả" thì lấy hết, nếu không thì chỉ lấy khóa trùng category
+        const filteredData = (category === 'Tất cả') 
+            ? coursesData 
+            : coursesData.filter(course => course.category === category);
+        
+        // Bắt đầu nhét html vào
+        filteredData.forEach(course => {
             container.innerHTML += `
                 <div class="course-card" onclick="window.location.href='detail.html?id=${course.id}'">
                     <div class="course-img">
