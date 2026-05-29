@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Khóa Học - TALK SMART EDU</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ghi đè padding-top cho riêng trang này vì đã bỏ Header cố định */
+        body { padding-top: 0; }
+        .back-nav { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .back-nav a { font-weight: 600; color: var(--text-gray); transition: 0.3s; }
+        .back-nav a:hover { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <div class="back-nav">
+        <div class="container">
+            <a href="courses.html"><i class="fa-solid fa-arrow-left-long"></i> Quay lại danh sách khóa học</a>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="detail-layout" style="padding-top: 0;">
+            <div class="detail-main">
+                <div class="content-block">
+                    <h1 id="detailTitle" style="font-size: 34px; margin-bottom: 15px; color: var(--secondary); line-height: 1.3;">Tên khóa học</h1>
+                    <div style="display: flex; gap: 20px; font-size: 15px; color: var(--text-gray); font-weight: 500;">
+                        <span style="color: #fbbf24;"><i class="fa-solid fa-star"></i> 4.9 Đánh giá</span>
+                        <span><i class="fa-solid fa-user-group"></i> <span id="detailStudents">0</span> Học viên đã học</span>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h2><i class="fa-solid fa-bullseye" style="color: var(--primary);"></i> Kết quả đạt được</h2>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check"></i> Vượt qua nỗi sợ hãi khi nói trước đám đông.</li>
+                        <li><i class="fa-solid fa-check"></i> Làm chủ ánh mắt, nụ cười, ngôn ngữ hình thể.</li>
+                        <li><i class="fa-solid fa-check"></i> Diễn đạt rõ ràng, mạch lạc, không lúng túng.</li>
+                        <li><i class="fa-solid fa-check"></i> Kỹ năng lắng nghe thấu hiểu (Active Listening).</li>
+                        <li><i class="fa-solid fa-check"></i> Xử lý tình huống từ chối khéo léo.</li>
+                        <li><i class="fa-solid fa-check"></i> Ứng biến nhanh nhạy trong các cuộc họp.</li>
+                    </ul>
+                </div>
+
+                <div class="content-block">
+                    <h2><i class="fa-solid fa-book-open" style="color: var(--primary);"></i> Thông tin chi tiết</h2>
+                    <p id="detailDesc" style="color: var(--text-gray); line-height: 1.8; font-size: 16px;"></p>
+                </div>
+            </div>
+
+            <div>
+                <div class="sidebar-sticky" style="top: 20px;">
+                    <div class="sidebar-img" id="detailIcon">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="sidebar-content">
+                        <div class="sidebar-price" id="detailPrice">0₫</div>
+                        <div class="sidebar-old-price" id="detailOldPrice">0₫</div>
+                        
+                        <button class="btn-main btn-full" style="font-size: 18px; padding: 16px;" onclick="app.addToCart()">ĐĂNG KÝ HỌC NGAY</button>
+                        <button class="btn-outline btn-full" onclick="app.openModal('consult')">NHẬN TƯ VẤN THÊM</button>
+                        
+                        <ul class="includes-list">
+                            <li><i class="fa-solid fa-video"></i> <span id="detailHours">0</span> giờ học thực chiến</li>
+                            <li><i class="fa-solid fa-laptop-file"></i> Tặng kho tài liệu MC/Thuyết trình</li>
+                            <li><i class="fa-solid fa-headset"></i> Chuyên gia hỗ trợ trực tiếp 1-1</li>
+                            <li><i class="fa-solid fa-rotate-left"></i> Hoàn tiền nếu không hài lòng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="consultModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="app.closeModal('consultModal')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 style="margin-bottom: 20px; text-align: center; color: var(--secondary);">Đăng ký nhận tư vấn</h2>
+            <form onsubmit="event.preventDefault(); app.showToast('Đã nhận thông tin! Tư vấn viên sẽ liên hệ sớm.'); app.closeModal('consultModal');">
+                <div class="form-group"><label>Số điện thoại (Zalo)</label><input type="tel" class="form-control" placeholder="09xx xxx xxx" required></div>
+                <div class="form-group">
+                    <label>Vấn đề bạn đang gặp phải</label>
+                    <select class="form-control">
+                        <option>Ngại giao tiếp, sợ đám đông</option>
+                        <option>Kỹ năng thuyết trình kém</option>
+                        <option>Cần kỹ năng cho công sở/phỏng vấn</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-main" style="width: 100%; padding: 12px; border-radius:30px;">GỬI YÊU CẦU</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toastBox"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

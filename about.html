@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK SMART EDU - Hệ Thống Đào Tạo Giao Tiếp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html"><i class="fa-solid fa-comments"></i> TALK SMART <span>EDU</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html"  class="active">Về chúng tôi</a></li>
+                <li><a href="courses.html">Khóa học</a></li>
+                <li><a href="roadmap.html">Lộ trình học</a></li>
+                <li><a href="blog.html">Blog / Kiến thức</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-outline" onclick="app.openModal('login')">Đăng nhập</button>
+                <button class="btn-main" onclick="window.location.href='courses.html'">Bắt đầu học</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+    <div class="page-header">
+        <h1>Về Talk Smart Edu</h1>
+        <p style="color: var(--text-gray); max-width: 700px; margin: 0 auto;">Hành trình đánh thức sự tự tin và kiến tạo những thế hệ giao tiếp xuất chúng.</p>
+    </div>
+
+    <section class="about-story">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Lớp học Talk Smart Edu">
+        </div>
+        <div class="about-text">
+            <h2>Hơn cả một lớp học, <br>đó là <span style="color: var(--primary);">sự thay đổi cuộc đời.</span></h2>
+            <p>Được thành lập từ năm 2018, Talk Smart Edu ra đời với một trăn trở duy nhất: <strong>"Tại sao rất nhiều người Việt Nam giỏi chuyên môn nhưng lại đánh mất cơ hội thăng tiến chỉ vì ngại giao tiếp?"</strong></p>
+            <p>Chúng tôi không dạy bạn những lý thuyết sáo rỗng. Chúng tôi tạo ra một môi trường an toàn – nơi bạn được quyền vấp ngã, được nói lắp, được run rẩy trong những buổi đầu tiên, để rồi kiêu hãnh tỏa sáng trên sân khấu lớn ở buổi học cuối cùng.</p>
+            <p>Với hơn <strong>10.000+ học viên</strong> đã thay đổi thành công, chúng tôi tin rằng: Không ai sinh ra đã là một diễn giả xuất chúng, tất cả đều đến từ sự rèn luyện đúng phương pháp.</p>
+        </div>
+    </section>
+
+    <section class="about-vision">
+        <i class="fa-solid fa-rocket" style="font-size: 40px; margin-bottom: 20px;"></i>
+        <h3>Tầm nhìn & Sứ mệnh</h3>
+        <p style="color: rgba(255,255,255,0.9); font-size: 16px; max-width: 800px; margin: 0 auto;">Trở thành hệ thống giáo dục ngôn ngữ và kỹ năng mềm hàng đầu Việt Nam. Mang đến môi trường thực chiến 100%, giúp người học đập tan rào cản tâm lý, nâng tầm giá trị bản thân và mở ra những cơ hội mới trong sự nghiệp.</p>
+    </section>
+
+    <section style="padding: 80px 0;">
+        <div class="section-title">
+            <h2>Giá Trị Cốt Lõi</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Tận Tâm</h3>
+                <p style="color: var(--text-gray); margin-top: 10px;">Đồng hành 1-1, sửa lỗi cho từng học viên. Không bỏ cuộc cho đến khi bạn tự tin.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+                <h3>Thực Chiến</h3>
+                <p style="color: var(--text-gray); margin-top: 10px;">Học là phải hành. 80% thời lượng là đứng sân khấu, cầm micro và tương tác.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-seedling"></i>
+                <h3>Bền Vững</h3>
+                <p style="color: var(--text-gray); margin-top: 10px;">Xây dựng sự tự tin từ bên trong (Tư duy) để phong thái tỏa ra bên ngoài tự nhiên nhất.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer>...</footer>
+    <div class="modal-overlay" id="authModal">...</div>
+    <div class="modal-overlay" id="consultModal">...</div>
+    <div class="toast" id="toastBox"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

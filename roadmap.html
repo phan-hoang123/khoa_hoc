@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK SMART EDU - Hệ Thống Đào Tạo Giao Tiếp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html"><i class="fa-solid fa-comments"></i> TALK SMART <span>EDU</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="courses.html">Khóa học</a></li>
+                <li><a href="roadmap.html"  class="active">Lộ trình học</a></li>
+                <li><a href="blog.html">Blog / Kiến thức</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-outline" onclick="app.openModal('login')">Đăng nhập</button>
+                <button class="btn-main" onclick="window.location.href='courses.html'">Bắt đầu học</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+    <div class="page-header">
+        <h1>Lộ Trình Trở Thành Master Giao Tiếp</h1>
+        <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">Phương pháp đào tạo 4 bước khép kín chuẩn quốc tế. Từ việc gỡ bỏ sự tự ti đến việc làm chủ hoàn toàn sân khấu.</p>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="step-num">GIAI ĐOẠN 1</span>
+                <h3>Phá Băng Tâm Lý</h3>
+                <p style="color: var(--text-gray);">Xác định nguyên nhân gốc rễ của sự sợ hãi. Thực hành các bài tập giải phóng hình thể, dám nói lên suy nghĩ của mình trước nhóm nhỏ (3-5 người) mà không sợ bị phán xét.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="step-num">GIAI ĐOẠN 2</span>
+                <h3>Kỹ Thuật Giọng Nói & Hình Thể</h3>
+                <p style="color: var(--text-gray);">Học cách lấy hơi bụng, phát âm tròn vành rõ chữ, kiểm soát nhịp độ nói. Kết hợp sử dụng ánh mắt, nụ cười và đôi tay (Body Language) để câu chuyện thêm sinh động.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="step-num">GIAI ĐOẠN 3</span>
+                <h3>Tư Duy Ngôn Ngữ & Cấu Trúc</h3>
+                <p style="color: var(--text-gray);">Cách sắp xếp ý tưởng mạch lạc (Công thức 5W1H, PREP). Kỹ năng kể chuyện (Storytelling) để thu hút người nghe ngay từ 30 giây đầu tiên.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="step-num">GIAI ĐOẠN 4</span>
+                <h3>Thực Chiến Sân Khấu Lớn</h3>
+                <p style="color: var(--text-gray);">Học viên tự thiết kế và trình bày một bài thuyết trình hoàn chỉnh trước toàn bộ lớp học và hội đồng chuyên gia. Nhận chứng chỉ tốt nghiệp từ Talk Smart Edu.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer>...</footer>
+    <div class="modal-overlay" id="authModal">...</div>
+    <div class="modal-overlay" id="consultModal">...</div>
+    <div class="toast" id="toastBox"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK SMART EDU - Hệ Thống Đào Tạo Giao Tiếp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html"><i class="fa-solid fa-comments"></i> TALK SMART <span>EDU</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="courses.html">Khóa học</a></li>
+                <li><a href="roadmap.html">Lộ trình học</a></li>
+                <li><a href="blog.html">Blog / Kiến thức</a></li>
+                <li><a href="contact.html"  class="active">Liên hệ</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-outline" onclick="app.openModal('login')">Đăng nhập</button>
+                <button class="btn-main" onclick="window.location.href='courses.html'">Bắt đầu học</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" style="padding-bottom: 80px;">
+    <div class="page-header">
+        <h1>Kết Nối Với Chúng Tôi</h1>
+        <p style="color: var(--text-gray)">Đội ngũ tư vấn viên luôn sẵn sàng giải đáp mọi thắc mắc của bạn 24/7.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3>Thông Tin Liên Hệ</h3>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="info-text">
+                    <h4>Trụ sở chính</h4>
+                    <p>Tòa nhà Smart, Cầu Diễn, Bắc Từ Liêm, Hà Nội</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone-volume"></i>
+                <div class="info-text">
+                    <h4>Hotline (24/7)</h4>
+                    <p>1900 0202 - 0988 123 456</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <div class="info-text">
+                    <h4>Email</h4>
+                    <p>contact@talksmart.edu.vn</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <h4 style="margin-bottom: 15px;">Theo dõi chúng tôi</h4>
+                <div style="display: flex; gap: 15px; font-size: 24px;">
+                    <a href="#" style="color: var(--accent); transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--accent)'"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: var(--accent); transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--accent)'"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" style="color: var(--accent); transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--accent)'"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3 style="margin-bottom: 25px; color: var(--secondary); font-size: 24px;">Gửi Tin Nhắn</h3>
+            <form onsubmit="event.preventDefault(); app.showToast('Tin nhắn đã được gửi thành công!'); this.reset();">
+                <div class="form-group">
+                    <label>Họ và tên *</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại *</label>
+                    <input type="tel" class="form-control" placeholder="Nhập số điện thoại" required>
+                </div>
+                <div class="form-group">
+                    <label>Lời nhắn</label>
+                    <textarea class="form-control" rows="4" placeholder="Bạn cần chúng tôi hỗ trợ gì?" style="resize: vertical;" required></textarea>
+                </div>
+                <button type="submit" class="btn-main" style="width: 100%; padding: 14px; font-size: 16px;">GỬI TIN NHẮN NGAY</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+    <footer>...</footer>
+    <div class="modal-overlay" id="authModal">...</div>
+    <div class="modal-overlay" id="consultModal">...</div>
+    <div class="toast" id="toastBox"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

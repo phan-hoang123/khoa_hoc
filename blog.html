@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK SMART EDU - Hệ Thống Đào Tạo Giao Tiếp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+
+    <header>
+    <div class="container">
+        <nav>
+            <a class="logo" href="index.html"><i class="fa-solid fa-comments"></i> TALK SMART <span>EDU</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Về chúng tôi</a></li>
+                <li><a href="courses.html">Khóa học</a></li>
+                <li><a href="roadmap.html">Lộ trình học</a></li>
+                <li><a href="blog.html"  class="active">Blog / Kiến thức</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-outline" onclick="app.openModal('login')">Đăng nhập</button>
+                <button class="btn-main" onclick="window.location.href='courses.html'">Bắt đầu học</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+    <div class="page-header">
+        <h1>Góc Kiến Thức</h1>
+        <p style="color: var(--text-gray)">Cập nhật những bí quyết giao tiếp, thuyết trình và phát triển bản thân</p>
+    </div>
+
+    <div class="course-grid" style="padding-bottom: 80px;">
+        <div class="course-card">
+            <div class="course-img" style="height: 180px; background: url('https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=500&q=80') center/cover;">
+                </div>
+            <div class="course-body">
+                <div class="course-meta"><span>12 Tháng 5, 2026</span><span><i class="fa-solid fa-eye"></i> 1.2k</span></div>
+                <h3>3 Kỹ Thuật Đơn Giản Để Đánh Bay Nỗi Sợ Đám Đông</h3>
+                <p>Khám phá cách những diễn giả hàng đầu kiểm soát nhịp tim và hơi thở trước khi bước lên sân khấu...</p>
+                <div class="course-footer" style="justify-content: flex-end;">
+                    <span style="color: var(--primary); font-weight: 700;">Đọc tiếp &rarr;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-img" style="height: 180px; background: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=500&q=80') center/cover;"></div>
+            <div class="course-body">
+                <div class="course-meta"><span>08 Tháng 5, 2026</span><span><i class="fa-solid fa-eye"></i> 856</span></div>
+                <h3>Body Language: Ngôn Ngữ Quyền Lực Nhất</h3>
+                <p>Bạn có biết 55% thông điệp truyền tải đến từ ngôn ngữ cơ thể? Đừng để đôi tay thừa thãi phá hỏng bài nói của bạn...</p>
+                <div class="course-footer" style="justify-content: flex-end;">
+                    <span style="color: var(--primary); font-weight: 700;">Đọc tiếp &rarr;</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-card">
+            <div class="course-img" style="height: 180px; background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80') center/cover;"></div>
+            <div class="course-body">
+                <div class="course-meta"><span>02 Tháng 5, 2026</span><span><i class="fa-solid fa-eye"></i> 2.1k</span></div>
+                <h3>Mô Hình PREP: Bí Quyết Tư Duy Mạch Lạc</h3>
+                <p>Cách trả lời câu hỏi bất ngờ trong các cuộc họp hay phỏng vấn mà không bị lúng túng hay lạc đề...</p>
+                <div class="course-footer" style="justify-content: flex-end;">
+                    <span style="color: var(--primary); font-weight: 700;">Đọc tiếp &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer>...</footer>
+    <div class="modal-overlay" id="authModal">...</div>
+    <div class="modal-overlay" id="consultModal">...</div>
+    <div class="toast" id="toastBox"><i class="fa-solid fa-circle-check"></i><span id="toastMsg"></span></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
